@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmet</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="icon" href="../img/header-logo-batman.png" type="image/logo">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="../font/fontAwesome/css/all.min.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/initialization.js"></script>
+    <script src="../js/toast.js"></script>
+    <style>
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        color: #ff6319;
+        text-decoration: none;
+      }
+      .social-link {
+        color: blue;
+      }
+      .nav-link:hover, .title-menu:hover {
+        color: black;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background: #ff6319;
+          z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a{
+        text-decoration: none;
+      }
+
+      .dropdown-item {
+        color: white;
+      }
+
+      input {
+        min-height: 3rem;
+      }
+      
+      #btnLogin {
+        background: #ff6319;
+      }
+      
+      #btnLogin:hover {
+        background: #f89b70;
+      }
+    </style>
+</head>
+<body> 
+    <div class="container-fluid" style="padding: 0 0; background: url(../img/bg-batman.jpg) no-repeat center; background-size: cover;">
+        <!-- HEADER -->
+      <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top">  
+            <div class="container">
+              <ul class="navbar-nav mr-5" style="vertical-align: middle;">
+                <div class="navbar-brand">
+                  <a href="../html/index.html" class="text-dark" style="text-decoration: none;">
+                    <img class="mr-2" src="../img/header-logo-batman.png" alt="" style="width: 40px;">
+                    <!-- <span class="font-weight-bold" style="font-size: 30px; vertical-align: middle;">Helmet</span> -->
+                    <img src="../img/helmet-logo.png" alt="" style="height: 30px; vertical-align: middle;">
+                  </a>
+                </div>
+              </ul>
+              <div class="col-4"></div>
+              <div class="col-3">
+                <div class="row" style="font-size: 12px;">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <div class="fs-3" style="color: #ff6319;">
+                          <i class="fa-solid fa-phone" style="font-size: 2em; line-height: unset;"></i>
+                        </div>
+                      </div>
+                      <div class="col-9">
+                        <div class="row font-weight-bold">Tư vấn hỗ trợ</div>
+                        <div class="row" style="color: #ff6319;"><strong>0912345678</strong></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </header>
+        
+        <div class="pt-4" style="padding-bottom: 50px;"></div>
+
+        <!-- CONTENT -->
+        <section class="container" style="max-width: 600px; margin-top: 100px; margin-bottom: 100px;">
+          <div class="row">
+            <div class="container">
+              <a href="../html/index.html">
+                  <i class="fa-solid fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+          <!-- MAIN CONTENT -->
+          <div class="container bg-dark p-3 mt-3 mb-3 text-white" style="border-radius: 10px;">
+            <form action="" class="container  p-5">
+              <h1 class="title text-center mb-4">ĐĂNG NHẬP</h1>
+              <div class="form-group">
+                <label for="ipUsername">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="ipUsername" aria-describedby="username">
+                <span id="errUsername"></span>
+              </div>
+              <div class="form-group">
+                <label for="ipPassword">Mật khẩu</label>
+                <input type="password" class="form-control" id="ipPassword">
+                <span id="errPassword"></span>
+              </div>
+              <div class="form-group">
+                <label></label>
+                <button class="form-control text-white font-weight-bold" id="btnLogin" style="border: unset; min-height: 4rem; box-shadow: 2px 6px 10px #4f2410;">Đăng nhập</button>
+              </div>
+              <div class="form-group text-right">
+                <div class="row">
+                  <div class="col text-left">
+                    <a class="font-italic" href="#">Quên mật khẩu</a>
+                  </div>
+                  <div class="col text-right">
+                    <a href="../html/dang-ky.html" class="font-italic">Chưa có tài khoản?</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="footer bg-dark text-white pt-3" >
+          <div class="container">
+            <div class="row pt-3 pb-3" style="font-family: 'Times New Roman', Times, serif;">
+              <div class="col text-white font-weight-bold">VỀ CHÚNG TÔI</div>
+              <div class="col text-white font-weight-bold">HƯỚNG DẪN MUA HÀNG</div>
+              <div class="col text-white font-weight-bold">CHÍNH SÁCH BÁN HÀNG</div>
+              <div class="col text-white font-weight-bold">THÔNG TIN LIÊN HỆ</div>
+            </div>
+            <div class="row">
+              <div class="col text-white font-weight-lighter">
+                <p><a href="../index.html" style="color: #ff6319;"><strong> Helmet</strong></a> là thường hiệu mũ bảo hiểm được thành lập vào năm 2024 với tiêu chí đặt chất lượng sản phẩm lên hàng đầu.</p>
+                <p><strong style="color: #ff6319; font-style: italic;">Chất lượng hơn cả người yêu bạn và sẵn sàng hy sinh tính mạng để bảo vệ bạn!</strong></p>
+              </div>
+              <div class="col text-white">
+                <div class="container">
+                  <div class="row"><a href="#">Hướng dẫn mua hàng</a></div>
+                  <div class="row"><a href="#">Hướng dẫn thanh toán</a></div>
+                  <div class="row"><a href="#">Hướng dẫn đổi trả, hoàn tiền</a></div>
+                  <div class="row"><a href="#">Hướng dẫn bảo hành</a></div>
+                  <div class="row"><a href="#">Hướng dẫn sử dụng</a></div>
+                  <div class="row"><a href="#">Hướng dẫn khiếu nại</a></div>
+                </div>
+                
+              </div>
+              <div class="col text-white">
+                <div class="container">
+                  <div class="row"><a href="#">Điều khoản sử dụng</a></div>
+                  <div class="row"><a href="#">Chính sách vận chuyển</a></div>
+                  <div class="row"><a href="#">Chính sách đổi trả, hoàn tiền</a></div>
+                  <div class="row"><a href="#">Chính sách bảo hành</a></div>
+                  <div class="row"><a href="#">Chính sách bảo mật</a></div>
+                  <div class="row"><a href="#">Chính sách xử lý khiếu nại</a></div>
+                </div>
+              </div>
+              <div class="col text-white">
+                <div class="row">
+                  <div class="col-2 p-0">
+                    <div class="fs-3" style="color: #ff6319;">
+                      <i class="fa-solid fa-location-dot" style="font-size: 2em; line-height: unset;"></i>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <div class="row"><p> <a href="https://www.google.com/maps/place/12+Nguy%E1%BB%85n+V%C4%83n+B%E1%BA%A3o,+Ph%C6%B0%E1%BB%9Dng+4,+G%C3%B2+V%E1%BA%A5p,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.821606,106.6872675,17z/data=!3m1!4b1!4m6!3m5!1s0x317529d313f06481:0x780176de17d954cb!8m2!3d10.821606!4d106.6872675!16s%2Fg%2F11sw08c2s8?entry=ttu">12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, TP. HCM</a></p></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2 p-0">
+                    <div class="fs-3" style="color: #ff6319;">
+                      <i class="fa-solid fa-phone" style="font-size: 2em; line-height: unset;"></i>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <div class="row">
+                      <p><a href="tel:+0123456789">0123 456 789</a> <br> 
+                        <a href="tel:+19008888"> 1900 8888</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2 p-0">
+                    <div class="fs-3" style="color: #ff6319;">
+                      <i class="fa-solid fa-envelope" style="font-size: 2em; line-height: unset;"></i>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <div class="row">
+                      <p>
+                        <a href="http://github.com/iamnguyenvu">http://github.com/iamnguyenvu</a><br>
+                        <a href="mailto:iamnguyenvu.gm@gmail.com">iamnguyenvu.gm@gmail.com</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row subc-mail pt-3 pb-3">
+              <div class="col"></div>
+              <div class="col">
+                <div class="row">
+                  <div class="col-4"><h5>NHẬN TIN KHUYẾN MÃI</h5></div>
+                  <div class="col-8 input-group">
+                    <form action="" class="form-inline">
+                      <input class="form-control" type="text" placeholder="Nhập email của bạn" style="border: black; border-radius: unset;">
+                      <button id="btnSubc" class="input-group-text" style="background: #ff6319; color: white; border: black; border-radius: unset;">Đăng ký</button>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="footer link-social pt-3 pb-3">
+              <div class="row">
+                <div class="col text-center font-weight-bold" style="font-family: 'Times New Roman', Times, serif; font-size: 24px;">THEO DÕI CHÚNG TÔI TẠI</div>
+              </div>
+              <ul class="row justify-content-center" style="list-style-type: none; padding-left: unset;">
+                <li class="m-3"><a href="https://www.facebook.com/" class="social-link facebook-link" target="_blank"><i class="fa-brands fa-facebook"  style="font-size: 2em;"></i></a></li>
+                <li class="m-3"><a href="https://www.íntagram.com/" class="social-link instagram-link" target="_blank"><i class="fa-brands fa-instagram" style="font-size: 2em;"></i></a></li>
+                <li class="m-3"><a href="https://www.youtube.com/" class="social-link youtube-link" target="_blank"><i class="fa-brands fa-youtube"  style="font-size: 2em;"></i></a></li>
+                <li class="m-3"><a href="https://www.tiktok.com/" class="social-link tiktok-link" target="_blank"><i class="fa-brands fa-tiktok"  style="font-size: 2em;"></i></a></li>
+              </ul>
+              <div class="row text-center text-white">
+                <div class="col mb-3">Copyright &copy; 2024 by nguyenvu. All right reserved.</div>
+              </div>
+            </div>
+          </div>
+        </footer>
+    </div>
+    <div id="toast"></div>
+</body>
+</html>   

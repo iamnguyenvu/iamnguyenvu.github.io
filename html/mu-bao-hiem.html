@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmet</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="icon" href="../img/header-logo-batman.png" type="image/logo">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="../font/fontAwesome/css/all.min.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/initialization.js"></script>
+    <script src="../js/helmet.js"></script>
+    <style>
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        color: #ff6319;
+        text-decoration: none;
+      }
+      .social-link {
+        color: blue;
+      }
+      .nav-link:hover, .title-menu:hover {
+        color: black;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background: #ff6319;
+          z-index: 1;
+          width: 100%;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown-content a{
+        text-decoration: none;
+      }
+
+      .dropdown-item {
+        color: white;
+        width: 100%;
+      }
+
+      .dropdown-item:hover {
+        background-color: white;
+      }
+
+      #btnPrice, #btnClear {
+        background: #ff6319;
+      }
+      
+      #btnPrice:hover, #btnClear:hover {
+        background: #f89b70;
+      }
+    </style>
+</head>
+<body> 
+    <div class="container-fluid" style="padding: 0 0; background: url(../img/bg-batman.jpg) no-repeat center; background-size: cover;">
+        <!-- HEADER -->
+      <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="box-shadow: 0px 2px 0px rgb(236, 236, 236)">  
+            <div class="container">
+              <ul class="navbar-nav mr-5" style="vertical-align: middle;">
+                <div class="navbar-brand">
+                  <a href="../html/index.html" class="text-dark" style="text-decoration: none;">
+                    <img class="mr-2" src="../img/header-logo-batman.png" alt="" style="width: 40px;">
+                    <!-- <span class="font-weight-bold" style="font-size: 30px; vertical-align: middle;">Helmet</span> -->
+                    <img src="../img/helmet-logo.png" alt="" style="height: 30px; vertical-align: middle;">
+                  </a>
+                </div>
+              </ul>
+
+              <div class="input-group col-4 mr-3" style="vertical-align: middle;">
+                <input id="searchInput" type="text" class="form-control mr-1" placeholder="Từ khóa tìm kiếm" aria-label="Từ khóa tìm kiếm" aria-describedby="Từ khóa tìm kiếm" style="border-radius: 20px;">
+                <div class="input-group-append">
+                  <button style="border-radius: 100px; border: unset; border: 1px solid rgb(82, 82, 82); vertical-align: middle; background: #ff6319;">
+                    <span class="input-group-text" id="btnSearch" style="background-color: unset; border: unset;"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-3">
+                <div class="row" style="font-size: 12px;">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <div class="fs-3" style="color: #ff6319;">
+                          <i class="fa-solid fa-phone" style="font-size: 2em; line-height: unset;"></i>
+                        </div>
+                      </div>
+                      <div class="col-9">
+                        <div class="row font-weight-bold">Tư vấn hỗ trợ</div>
+                        <div class="row" style="color: #ff6319;"><strong>0912345678</strong></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row">
+                      <div class="col-3 p-0">
+                        <div class="fs-3" style="color: #ff6319;">
+                          <i class="fa-solid fa-user" style="font-size: 2em; line-height: unset;"></i>
+                        </div>
+                      </div>
+                      <div class="col-9">
+                        <div class="row font-weight-bold" id="username-greeting">Xin chào</div>
+                        <div class="row" style="color: #ff6319;"><a class="login-link" href="../html/dang-nhap.html" style="color: #ff6319;"><strong class="login-text">Đăng nhập</strong></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-3">
+                <a href="#" type="button" class="btn btn-light position-relative">
+                  <i class="fa-regular fa-heart"  style="font-size: 1.5em;"></i>
+                   <span id="favourite" class="position-absolute top-0 start-100 translate-middle badge badge-light rounded-pill" style="background: #ff6319;">0</span>
+                  <span class="sr-only">unread messages</span>
+                </a>
+                <a href="#" type="button" class="btn btn-light position-relative">
+                  <i class="fa-solid fa-bag-shopping"  style="font-size: 1.5em;"></i>
+                   <span id="cart" class="position-absolute top-0 start-100 translate-middle badge badge-light rounded-pill" style="background: #ff6319;">0</span>
+                  <span class="sr-only">unread messages</span>
+                </a>
+              </div>
+            </div>
+        </header>
+        
+        <div class="pt-4" style="padding-bottom: 50px;"></div>
+
+        <!-- NAVBAR -->
+        <nav class="menu navbar-menu navbar-expand" style="font-size: 18px; height: 50px; background: #ff6319;">  
+          <div class="container" style="height: 100%; vertical-align: middle;">
+            <ul class="navbar-nav mr-auto mf-auto" style="vertical-align: middle; height: 100%; align-items: center;">
+              <div class="col-3 text-white mr-3 pr-0" style="list-style-type: none; border-right: 2px solid white;">
+                <li class="nav-item dropdown" style="width: 100%;">
+                  <a id="navbarDropdown" class="nav-link" href="#">
+                    <i class="fa-solid fa-list mr-2"></i>
+                    Danh mục sản phẩm
+                  </a>
+                  <div class="dropdown-content">
+                    <a class="dropdown-item fullface" href="#" style="text-indent: 1em;">Mũ bảo hiểm Fullface</a>
+                    <a class="dropdown-item semi" href="#" style="text-indent: 1em;">Mũ bảo hiểm 1/2 đầu</a>
+                    <a class="dropdown-item" href="#" style="text-indent: 1em;">Mũ bảo hiểm 3/4 đầu</a>
+                    <a class="dropdown-item" href="#" style="text-indent: 1em;">Mũ bảo hiểm lật cằm</a>
+                    <a class="dropdown-item" href="#" style="text-indent: 1em;">Mũ bảo hiểm trẻ em</a>
+                  </div>
+                </li>
+                
+              </div>
+              <li class="menu nav-item mr-auto">
+                 <a class="nav-link" href="./index.html">Trang chủ</a>
+               </li>
+               <li class="menu nav-item mr-auto">
+                 <a class="nav-link" href="../html/gioi-thieu.html">Giới thiệu</a>
+               </li>
+               <li class="menu nav-item mr-auto">
+                 <a class="nav-link" href="">Sản phẩm</a>
+               </li>
+               <li class="menu nav-item mr-auto">
+                 <a class="nav-link" href="">Tin mới nhất</a>
+               </li>
+               <li class="menu nav-item mr-auto">
+                 <a class="nav-link"  href="">Câu hỏi thường gặp</a>
+               </li>
+               <li class="menu nav-item mr-auto">
+                 <a class="nav-link"  href="">Tuyển dụng</a>
+               </li>
+               <li class="menu nav-item mr-auto">
+                 <a class="nav-link"  href="">Liên hệ</a>
+               </li>
+           </ul>
+          </div>
+        </nav>
+        <!-- CONTENT -->
+        <section class="content">
+          <div class="row">
+            <div class="container">
+              <a href="../html/index.html">
+                  <i class="fa-solid fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+          <!-- MAIN CONTENT -->
+          <div class="container bg-light p-0">
+            <div class="row" id="main-content">
+              <section class="col-5 img">
+                <!-- <div class="row"> -->
+                  <div class="container p-5">
+                    <img id="helmet-img" class="img-helmet card-img" src="../img/3p4Helmet/M20C.jpg" alt="">
+                  <!-- </div> -->
+                </div>
+
+                <div class="row">
+                  <div class="col"></div>
+                  <div class="col" style="border-left: 1px solid gray;">
+                    <button class="btn btn-light pr-5" style="border: unset;">
+                      <span class="row" style="color: #ff6319;">
+                        <i class="fa-regular fa-heart mr-3 pl-3"  style="font-size: 1.5em;"></i>
+                        <h5>Yêu thích</h5>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="col-7  helmet-content">
+                <div class="container p-5 m-3">
+                  <div class="row m-3">
+                    <h2 id="helmet-title" class="helmet-title text-center font-weight-bold" style="color: #ff6319;">MŨ BẢO HIỂM...</h2>
+                  </div>
+                  <div class="row m-3">
+                    <h5  id="helmet-category"></h5>
+                  </div>
+                  <div class="row m-3">
+                    <div class="col" style="border-right: 1px solid gray; color: #ff6319;">
+                      <div class="text-center">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                    <div class="col"><h5 class="text-center">Đánh giá</h5></div>
+                  </div>
+                  <div class="row m-3 ">
+                    <strong>
+                      <div class="row justify-content-center">
+                        <h2 style="text-indent: 0.5em;">Giá: </h2>
+                        <h2 id="helmet-price" class="helmet-price" style="color: #ff6319; text-indent: 1em;">600000 đ</h2>
+                      </div>
+                    </strong>
+                    
+                  </div>
+                  <div class="row m-3">
+                    <div class="col-3 p-0"><h4>Số lượng</h4></div>
+                    <div class="col-9">
+                      <button class="btnMinus" style="width: 30px;">-</button>
+                      <input id="quantityInput" type="text" value="1" style="width: 40px;">
+                      <button class="btnPlus" style="width: 30px;">+</button>
+                    </div>
+                  </div>
+                  <div class="row m-3">
+                    <div class="col p-0 m-3">
+                      <button class="form-control" style="border: 1px solid #ff6319; height: 4rem; color: #ff6319; background: #fff0e9;"><i class="fa-solid fa-bag-shopping"></i> Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="col p-0 m-3">
+                      <button class="form-control" style="background: #ff6319; height: 4rem; color: white;">Mua ngay</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="container m-5"></div>
+              </section>
+              <div class="container m-3">
+                <div class="container">
+                  <p id="helmet-desc">
+                    <b>
+                      Bạn đang tìm một chiếc mũ bảo hiểm đa dụng, phong cách, cá tính, sang trọng và an toàn để bảo vệ bản thân trên mọi cung đường? </b>
+                      <b class="subDesc"></b> <b> chính là sự lựa chọn hoàn hảo dành cho bạn.
+                    </b>
+                      Nón bảo hiểm Royal M139 sở hữu thiết kế đột phá mang lại phong cách, sang trọng, thời trang, tiện lợi, đa dụng.
+                      Thiết kế kính âm mang tới sự khác biệt so với các sản phẩm mũ bảo hiểm khác. 
+                      Khi được kéo lên, lớp kính bảo vệ sẽ ẩn mình vào bên trong nón, biến Royal M139 thành chiếc mũ bảo hiểm  ¾  đầy năng động, phong cách. 
+                      Khi kéo xuống, lớp kính chắc chắn, trong suốt sẽ bảo vệ bạn khỏi khói bụi, dị vật mà vẫn mang đến cho bạn tầm nhìn thoáng đãng và  phong cách thời trang trên mọi cung đường.
+                      <img src="../img/img-desc-1.png" alt=""> <br>
+                      Với tính năng độc đáo như vậy, <b class="subDesc"></b> thực sự là một sự lựa chọn không thể bỏ qua cho những bạn trẻ vừa muốn có một chiếc mũ bảo hiểm phong cách, sang trọng, thời trang nhưng vẫn đảm bảo được sự an toàn khi tham gia giao thông.
+                      <img src="../img/img-desc-2.png" alt="">
+                      <img src="../img/img-desc-3.png" alt=""> <br>
+                      Không chỉ là một chiếc nón bảo hiểm, <b class="subDesc"></b> còn là trợ thủ để mỗi cá nhân khẳng định được phong cách, cá tính riêng biệt của mình.
+                      Thời trang, phong cách và cá tính độc đáo là điều rất quan trọng đối với mỗi cá nhân, đặc biệt là những bạn trẻ. 
+                      Việc sở hữu một chiếc nón bảo hiểm <b class="subDesc"></b> chắc chắn sẽ giúp bạn khẳng định được phong cách cá tính riêng biệt, không thể trộn lẫn của mình với những mẫu tem nhãn, màu sơn độc đáo.
+                  </p>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- FOOTER -->
+        <footer class="footer bg-dark text-white pt-3" >
+          <div class="container">
+            <div class="row pt-3 pb-3" style="font-family: 'Times New Roman', Times, serif;">
+              <div class="col text-white font-weight-bold">VỀ CHÚNG TÔI</div>
+              <div class="col text-white font-weight-bold">HƯỚNG DẪN MUA HÀNG</div>
+              <div class="col text-white font-weight-bold">CHÍNH SÁCH BÁN HÀNG</div>
+              <div class="col text-white font-weight-bold">THÔNG TIN LIÊN HỆ</div>
+            </div>
+            <div class="row">
+              <div class="col text-white font-weight-lighter">
+                <p><a href="../index.html" style="color: #ff6319;"><strong> Helmet</strong></a> là thường hiệu mũ bảo hiểm được thành lập vào năm 2024 với tiêu chí đặt chất lượng sản phẩm lên hàng đầu.</p>
+                <p><strong style="color: #ff6319; font-style: italic;">Chất lượng hơn cả người yêu bạn và sẵn sàng bảo vệ bằng cả tính mạng!</strong></p>
+              </div>
+              <div class="col text-white">
+                <div class="container">
+                  <div class="row"><a href="#">Hướng dẫn mua hàng</a></div>
+                  <div class="row"><a href="#">Hướng dẫn thanh toán</a></div>
+                  <div class="row"><a href="#">Hướng dẫn đổi trả, hoàn tiền</a></div>
+                  <div class="row"><a href="#">Hướng dẫn bảo hành</a></div>
+                  <div class="row"><a href="#">Hướng dẫn sử dụng</a></div>
+                  <div class="row"><a href="#">Hướng dẫn khiếu nại</a></div>
+                </div>
+                
+              </div>
+              <div class="col text-white">
+                <div class="container">
+                  <div class="row"><a href="#">Điều khoản sử dụng</a></div>
+                  <div class="row"><a href="#">Chính sách vận chuyển</a></div>
+                  <div class="row"><a href="#">Chính sách đổi trả, hoàn tiền</a></div>
+                  <div class="row"><a href="#">Chính sách bảo hành</a></div>
+                  <div class="row"><a href="#">Chính sách bảo mật</a></div>
+                  <div class="row"><a href="#">Chính sách xử lý khiếu nại</a></div>
+                </div>
+              </div>
+              <div class="col text-white">
+                <div class="row">
+                  <div class="col-2 p-0">
+                    <div class="fs-3" style="color: #ff6319;">
+                      <i class="fa-solid fa-location-dot" style="font-size: 2em; line-height: unset;"></i>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <div class="row"><p> <a href="https://www.google.com/maps/place/12+Nguy%E1%BB%85n+V%C4%83n+B%E1%BA%A3o,+Ph%C6%B0%E1%BB%9Dng+4,+G%C3%B2+V%E1%BA%A5p,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.821606,106.6872675,17z/data=!3m1!4b1!4m6!3m5!1s0x317529d313f06481:0x780176de17d954cb!8m2!3d10.821606!4d106.6872675!16s%2Fg%2F11sw08c2s8?entry=ttu">12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, TP. HCM</a></p></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2 p-0">
+                    <div class="fs-3" style="color: #ff6319;">
+                      <i class="fa-solid fa-phone" style="font-size: 2em; line-height: unset;"></i>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <div class="row">
+                      <p><a href="tel:+0123456789">0123 456 789</a> <br> 
+                        <a href="tel:+19008888"> 1900 8888</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2 p-0">
+                    <div class="fs-3" style="color: #ff6319;">
+                      <i class="fa-solid fa-envelope" style="font-size: 2em; line-height: unset;"></i>
+                    </div>
+                  </div>
+                  <div class="col-10">
+                    <div class="row">
+                      <p>
+                        <a href="http://github.com/iamnguyenvu">http://github.com/iamnguyenvu</a><br>
+                        <a href="mailto:iamnguyenvu.gm@gmail.com">iamnguyenvu.gm@gmail.com</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row subc-mail pt-3 pb-3">
+              <div class="col"></div>
+              <div class="col">
+                <div class="row">
+                  <div class="col-4"><h5>NHẬN TIN KHUYẾN MÃI</h5></div>
+                  <div class="col-8 input-group">
+                    <form action="" class="form-inline">
+                      <input class="form-control" type="text" placeholder="Nhập email của bạn" style="border: black; border-radius: unset;">
+                      <button id="btnSubc" class="input-group-text" style="background: #ff6319; color: white; border: black; border-radius: unset;">Đăng ký</button>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="footer link-social pt-3 pb-3">
+              <div class="row">
+                <div class="col text-center font-weight-bold" style="font-family: 'Times New Roman', Times, serif; font-size: 24px;">THEO DÕI CHÚNG TÔI TẠI</div>
+              </div>
+              <ul class="row justify-content-center" style="list-style-type: none; padding-left: unset;">
+                <li class="m-3"><a href="https://www.facebook.com/" class="social-link facebook-link" target="_blank"><i class="fa-brands fa-facebook"  style="font-size: 2em;"></i></a></li>
+                <li class="m-3"><a href="https://www.íntagram.com/" class="social-link instagram-link" target="_blank"><i class="fa-brands fa-instagram" style="font-size: 2em;"></i></a></li>
+                <li class="m-3"><a href="https://www.youtube.com/" class="social-link youtube-link" target="_blank"><i class="fa-brands fa-youtube"  style="font-size: 2em;"></i></a></li>
+                <li class="m-3"><a href="https://www.tiktok.com/" class="social-link tiktok-link" target="_blank"><i class="fa-brands fa-tiktok"  style="font-size: 2em;"></i></a></li>
+              </ul>
+              <div class="row text-center text-white">
+                <div class="col mb-3">Copyright &copy; 2024 by nguyenvu. All right reserved.</div>
+              </div>
+            </div>
+          </div>
+        </footer>
+    </div>
+    <div class="modal fade" id="register-modal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title text-left pb-20 bb-2px-solid-black">
+              THÔNG TIN ĐĂNG KÝ
+            </h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 20px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="" class="form">
+              <div class="form-group row" style="font-weight: bold;">
+                <label for="ipName" class="col-md-3 col-form-label text-right">Họ tên</label>
+                <div class="col-md-9">
+                    <input type="text" name="ipName" id="ipName" class="form-control">
+                  <span class="errName"></span>
+                </div>
+              </div>
+              <div class="form-group row" style="font-weight: bold;">
+                <label for="ipDOB" class="col-md-3 col-form-label text-right">Ngày sinh</label>
+                <div class="col-md-9">
+                    <input type="date" name="ipDOB" id="ipDOB" class="form-control">
+                  <span class="errDOB"></span>
+                </div>
+              </div>
+              <div class="form-group row" style="font-weight: bold;">
+                <label for="ipPhone" class="col-md-3 col-form-label text-right">Số điện thoại</label>
+                <div class="col-md-9">
+                    <input type="text" name="ipPhone" id="ipPhone" class="form-control">
+                  <span class="errDOB"></span>
+                </div>
+              </div>
+              <div class="form-group row" style="font-weight: bold;">
+                <label for="ipEmail" class="col-md-3 col-form-label text-right">Email</label>
+                <div class="col-md-9">
+                    <input type="text" name="ipEmail" id="ipEmail" class="form-control">
+                  <span class="errEmail"></span>
+                </div>
+              </div>
+              <div class="form-group row" style="font-weight: bold;">
+                <label for="Course" class="col-md-3 col-form-label text-right">Chọn khóa học</label>
+                <div class="col-md-9">
+                    <select name="Course" id="Courses" class="form-control">
+                      <option value="basicEnglish">Tiếng anh cơ bản</option>
+                      <option value="englishCommunicate">Tiếng anh giao tiếp</option>
+                      <option value="ielts">Luyện thi IELTS</option>
+                    </select>
+                </div>
+              </div>
+              <div class="form-group row" style="font-weight: bold;">
+                <label for="ipEmail" class="col-md-3 col-form-label text-right">Thời gian học</label>
+                <div class="col-md-9">
+                    <input id="timeLearing" class="form-control" type="text" disabled>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Đăng ký</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="toast"></div>
+</body>
+</html>   

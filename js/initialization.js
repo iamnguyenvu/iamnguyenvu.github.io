@@ -184,7 +184,7 @@ function createProduct() {
         {
             id: 21,
             status: 1, 
-            title: 'MŨ BẢO HIỂM 1/2 ĐẦU M179 DESIGN',
+            title: 'MŨ BẢO HIỂM LẬT CẰM M179 DESIGN',
             img: '../img/chinupHelmet/M179DESIGN.jpg',
             category: 'chinup',
             price: 745000,
@@ -193,7 +193,7 @@ function createProduct() {
         {
             id: 22,
             status: 1, 
-            title: 'MŨ BẢO HIỂM 1/2 ĐẦU M179',
+            title: 'MŨ BẢO HIỂM LẬT CẰM ĐẦU M179',
             img: '../img/chinupHelmet/M179.jpg',
             category: 'chinup',
             price: 710000,

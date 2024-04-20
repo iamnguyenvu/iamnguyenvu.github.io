@@ -86,4 +86,8 @@ $(document).ready(function () {
         carts.splice(index, 1);
         localStorage.setItem("carts", JSON.stringify(carts));
     }
+
+    let favourite = JSON.parse(localStorage.getItem("favourite")) || [];
+    $("#favourite").text(favourite.length);
+    $("#cart").text(carts.length);
 });

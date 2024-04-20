@@ -97,6 +97,9 @@ $(document).ready(function () {
         localStorage.setItem('carts', JSON.stringify(carts));
     });
     // window.onload =  localStorage.removeItem('carts');
+
+    $("#favourite").text(favourite.length);
+    $("#cart").text(carts.length);
 });
 
 

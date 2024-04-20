@@ -58,7 +58,45 @@ $(document).ready(function () {
         quantityInput.value = currentQuantity + 1;
     });
 
+    let favourite = JSON.parse(localStorage.getItem("favourite")) || [];
+    document.querySelector("#btnAddtoFav").addEventListener("click", function() {
+        let flag = false;
+        for(let i = 0; i < favourite.length; i++) {
+            if(favourite[i].productId == parseInt(id)){
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            favourite.push({
+                productId: parseInt(id),
+            });
+        }
+        
+        localStorage.setItem('favourite', JSON.stringify(favourite));
+    });
 
+    let carts = JSON.parse(localStorage.getItem("carts")) || [];
+    document.querySelector("#btnAddtoCart").addEventListener("click", function() {
+        let found = false;
+        for(let i = 0; i < carts.length; i++) {
+            if(carts[i].productId == parseInt(id)){
+                carts[i].quantity += parseInt(quantityInput.value);
+                found = true;
+                break;
+            }
+            
+        }
+        if(!found){
+            carts.push({
+                productId: parseInt(id),
+                quantity: parseInt(quantityInput.value)
+            });
+        }
+        
+        localStorage.setItem('carts', JSON.stringify(carts));
+    });
+    // window.onload =  localStorage.removeItem('carts');
 });
 
 

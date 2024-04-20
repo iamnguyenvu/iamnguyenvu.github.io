@@ -14,7 +14,7 @@ $(document).ready(function() {
                 found = true;
                 let loggedInUser = accounts[i].username;
                 localStorage.setItem('loggedInAccount', JSON.stringify(loggedInUser));
-                window.location.href = "index.html";
+                window.location.href = "../index.html";
                 break;
             }
         }

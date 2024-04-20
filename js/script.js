@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   if (loggedInUser) {
       $("#username-greeting").text("Xin chào, " + loggedInUser);
-      $(".login-link").attr("href", "../html/index.html");
+      $(".login-link").attr("href", "../index.html");
       $(".login-text").text("Đăng xuất");
       $(".login-link").click(function (e) { 
         localStorage.removeItem('loggedInAccount');

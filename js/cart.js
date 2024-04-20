@@ -12,6 +12,7 @@ $(document).ready(function () {
             this.value = newQuantity;
             totalCell.textContent = product.price * cart.quantity + " VND";
             localStorage.setItem("carts", JSON.stringify(carts));
+            updateTotalAmount();
         });
     }
 
@@ -71,6 +72,7 @@ $(document).ready(function () {
                 deleteButton.addEventListener("click", function() {
                     removeProductFromCart(i);
                     tableBody.removeChild(row);
+                    updateTotalAmount();
                 });
                 actionCell.appendChild(deleteButton);
                 row.appendChild(actionCell);
@@ -90,4 +92,23 @@ $(document).ready(function () {
     let favourite = JSON.parse(localStorage.getItem("favourite")) || [];
     $("#favourite").text(favourite.length);
     $("#cart").text(carts.length);
+
+    function calculateTotalAmount() {
+        let totalAmount = 0;
+        carts.forEach(cart => {
+            products.forEach(product => {
+                if (cart.productId === product.id) {
+                    totalAmount += product.price * cart.quantity;
+                }
+            });
+        });
+        return totalAmount;
+    }
+
+    function updateTotalAmount() {
+        let totalAmount = calculateTotalAmount();
+        $("#totalAmount").text(totalAmount + " VND");
+    }
+
+    updateTotalAmount();
 });

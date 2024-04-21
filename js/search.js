@@ -60,14 +60,15 @@ $(document).ready(function () {
     });
   }
 
-    document.getElementById("btnSearch").addEventListener("click", function() {
-        searchProducts();
-    });
+  document.getElementById("btnSearch").addEventListener("click", function() {
+    searchProducts();
+  });
 
-    document.getElementById("searchInput").addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-            searchProducts();
-        }
-    });
+  document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      searchProducts();
+    }
+
+  });
     
 });

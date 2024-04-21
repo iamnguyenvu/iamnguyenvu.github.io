@@ -229,6 +229,7 @@ $(document).ready(function() {
     $("#home-products").append(col);
     });
   }
+  
   $("input[type='checkbox']").change(function() {
     filterProductsByCategory();
   });

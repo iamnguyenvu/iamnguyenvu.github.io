@@ -13,6 +13,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/initialization.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/search.js"></script>
     <style>
       a {
         text-decoration: none;
@@ -86,8 +87,8 @@
               <div class="input-group col-4 mr-3" style="vertical-align: middle;">
                 <input id="searchInput" type="text" class="form-control mr-1" placeholder="Từ khóa tìm kiếm" aria-label="Từ khóa tìm kiếm" aria-describedby="Từ khóa tìm kiếm" style="border-radius: 20px;">
                 <div class="input-group-append">
-                  <button style="border-radius: 100px; border: unset; border: 1px solid rgb(82, 82, 82); vertical-align: middle; background: #ff6319;">
-                    <span class="input-group-text" id="btnSearch" style="background-color: unset; border: unset;"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></span>
+                  <button id="btnSearch" style="border-radius: 100px; border: unset; border: 1px solid rgb(82, 82, 82); vertical-align: middle; background: #ff6319;">
+                    <span class="input-group-text" style="background-color: unset; border: unset;"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></span>
                   </button>
                 </div>
               </div>
@@ -232,7 +233,7 @@
                   <div class="container mt-2" style="border-bottom: 1px solid gray;">
                     <h6>Theo danh mục</h6>
                     <div class="form-group m-0">
-                      <input type="checkbox" name="Fullface" id="csbFullface">
+                      <input type="checkbox" name="Fullface" id="cbFullface">
                       <label for="cbFullface">Mũ bảo hiểm Fullface</label>
                     </div>
                     <div class="form-group m-0">

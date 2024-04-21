@@ -233,7 +233,34 @@ $(document).ready(function() {
     filterProductsByCategory();
   });
 
+  $("#btnPrice").click(function() {
+    let fromPrice = $("#fromPrice").val();
+    let toPrice = $("#toPrice").val();
+  
+    if (fromPrice !== '' && toPrice !== '') {
+      let filteredProducts = products.filter(function(product) {
+        return product.price >= parseInt(fromPrice) && product.price <= parseInt(toPrice);
+      });
+      displayFilteredProducts(filteredProducts);
+    } else {
+      displayProductsOnPage(currentPage);
+    }
+  });
 
+  document.getElementById("btnClear").addEventListener("click", function() {
+    document.getElementById("slSort").selectedIndex = 0;
+
+    document.getElementById("cbFullface").checked = false;
+    document.getElementById("cb1phan2").checked = false;
+    document.getElementById("cb3phan4").checked = false;
+    document.getElementById("cbChinup").checked = false;
+    document.getElementById("cbKid").checked = false;
+
+    document.getElementById("fromPrice").value = "";
+    document.getElementById("toPrice").value = "";
+    window.location.reload();
+  });
+  
 });
 
 

@@ -83,6 +83,7 @@ $(document).ready(function() {
 
   window.onload = displayProductsOnPage(currentPage);
   window.onload = $("#firstPage").css("background", "#ff6319");
+  
 
   $("#prevPage").click(function() {
     currentPage--;
@@ -261,6 +262,63 @@ $(document).ready(function() {
     document.getElementById("toPrice").value = "";
     window.location.reload();
   });
+
+  function displayBestSeller() {
+    let pageBestSeller = document.getElementById("best-seller");
+    pageBestSeller.innerHTML = "";
+      let row = document.createElement("div");
+      row.className = "container row product-list mb-3 justify-content-center m-3";
+    for(let i = 0; i < 4; i++) {
+      let productBS = products[i];
+
+        let col = document.createElement("div");
+        col.className = "col-3";
+
+        let card = document.createElement("div");
+        card.className = "card";
+
+        let cardBody = document.createElement("a");
+        cardBody.className = "card-body";
+        cardBody.id = productBS.id;
+        cardBody.href = "../html/mu-bao-hiem.html";
+
+        let img = document.createElement("img");
+        img.src = productBS.img;
+        img.className = "card-img";
+
+        let title = document.createElement("h6");
+        title.className = "card-title title-center form-control mb-3 pb-3 font-weight-bold";
+        title.textContent = productBS.title;
+        title.style.border = "unset"; 
+        title.style.fontSize = "14px";
+        title.style.height = "3rem";
+
+        let price = document.createElement("span");
+        price.className = "card-price mt-3 mb-3";
+        price.textContent = "Giá: " + productBS.price + " VND";
+        price.style.color = "black";
+
+        let button = document.createElement("button");
+        button.className = "card-btn form-control";
+        button.style.background = "#ff6319";
+        button.textContent = "Mua ngay";
+        button.style.color = "white"; 
+
+        cardBody.appendChild(img);
+        cardBody.appendChild(title);
+        cardBody.appendChild(price);
+        cardBody.appendChild(button);
+
+        card.appendChild(cardBody);
+        
+        col.appendChild(card);
+
+        row.appendChild(col);
+
+      pageBestSeller.appendChild(row);
+    }
+  }
+  window.onload = displayBestSeller();
   
 });
 

@@ -8,6 +8,7 @@ $(document).ready(function () {
         });
     
         displayFilteredProducts(filteredProducts);
+        document.getElementById("home-products").scrollIntoView({ behavior: 'smooth' });
     }
 
     

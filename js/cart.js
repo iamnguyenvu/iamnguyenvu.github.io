@@ -16,6 +16,22 @@ $(document).ready(function () {
         });
     }
 
+    function updateTotalAmount() {
+        let totalAmount = 0;
+        carts.forEach(cart => {
+            products.forEach(product => {
+                if (cart.productId === product.id) {
+                    totalAmount += product.price * cart.quantity;
+                }
+            });
+        });
+        $("#totalAmount").text(totalAmount + " VND");
+    }
+
+    $('input[type="checkbox"]').change(function() {
+        updateTotalAmount();
+    });
+
     //Thêm sản phẩm vào bảng giỏ hàng   
     for(let i = 0; i < carts.length; i++) {
         for(let j = 0; j < products.length; j++) {
@@ -93,22 +109,22 @@ $(document).ready(function () {
     $("#favourite").text(favourite.length);
     $("#cart").text(carts.length);
 
-    function calculateTotalAmount() {
-        let totalAmount = 0;
-        carts.forEach(cart => {
-            products.forEach(product => {
-                if (cart.productId === product.id) {
-                    totalAmount += product.price * cart.quantity;
-                }
-            });
-        });
-        return totalAmount;
-    }
+    // function calculateTotalAmount() {
+    //     let totalAmount = 0;
+    //     carts.forEach(cart => {
+    //         products.forEach(product => {
+    //             if (cart.productId === product.id) {
+    //                 totalAmount += product.price * cart.quantity;
+    //             }
+    //         });
+    //     });
+    //     return totalAmount;
+    // }
 
-    function updateTotalAmount() {
-        let totalAmount = calculateTotalAmount();
-        $("#totalAmount").text(totalAmount + " VND");
-    }
+    // function updateTotalAmount() {
+    //     let totalAmount = calculateTotalAmount();
+    //     $("#totalAmount").text(totalAmount + " VND");
+    // }
 
     updateTotalAmount();
 });

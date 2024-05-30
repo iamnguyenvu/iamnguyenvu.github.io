@@ -52,7 +52,7 @@ $(document).ready(function() {
             $("#errPassword").text("Không được để trống!");
             return false;
         } else if (!password.test($("#ipPassword").val())) {
-            $("#errPassword").text("Mật khẩu không hợp lệ!");
+            $("#errPassword").text("Mật khẩu ít nhất 8 kí tự bao gồm ít nhất 1 chữ cái hoa, 1 số và 1 kí tự đặc biệt!");
             return false;
         } else {
             $("#errPassword").text("");
